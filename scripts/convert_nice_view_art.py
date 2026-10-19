@@ -5,6 +5,7 @@ The upstream peripheral chooses balloon or mountain at boot. Both descriptors
 point to one bitmap, keeping its battery/connection widget completely unchanged.
 """
 
+import argparse
 from pathlib import Path
 
 from PIL import Image, ImageOps
@@ -16,10 +17,23 @@ OUTPUT = ROOT / "boards" / "shields" / "nice_view_custom" / "art.c"
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--dither",
+        choices=("floyd-steinberg", "none"),
+        default="floyd-steinberg",
+        help="Preserve shading with error diffusion (default), or use a fixed threshold for line art.",
+    )
+    args = parser.parse_args()
+
     with Image.open(ASSETS / "artwork-source.png") as source:
         portrait = ImageOps.grayscale(source).resize((68, 140), Image.Resampling.LANCZOS)
-    # Preserve the source's shading pattern without adding dithering.
-    portrait = portrait.point(lambda value: 255 if value >= 128 else 0, mode="1")
+    # Downsampling turns fine details into gray. Error diffusion retains their
+    # average brightness as white dots instead of discarding everything below 128.
+    if args.dither == "floyd-steinberg":
+        portrait = portrait.convert("1", dither=Image.Dither.FLOYDSTEINBERG)
+    else:
+        portrait = portrait.point(lambda value: 255 if value >= 128 else 0, mode="1")
     portrait.save(ASSETS / "artwork-68x140.png")
     portrait.resize((272, 560), Image.Resampling.NEAREST).save(
         ASSETS / "artwork-preview.png"

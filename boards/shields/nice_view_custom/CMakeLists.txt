@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: MIT
 
-if(CONFIG_SHIELD_NICE_VIEW_TOYOTERM AND NOT CONFIG_ZMK_DISPLAY)
-  message(FATAL_ERROR "nice_view_toyoterm requires CONFIG_ZMK_DISPLAY=y; check nice_view_toyoterm.conf")
+if(CONFIG_SHIELD_NICE_VIEW_CUSTOM AND NOT CONFIG_ZMK_DISPLAY)
+  message(FATAL_ERROR "nice_view_custom requires CONFIG_ZMK_DISPLAY=y; check nice_view_custom.conf")
 endif()
 
 if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
   if(NOT CONFIG_ZMK_SPLIT OR CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
-    message(FATAL_ERROR "nice_view_toyoterm is for the split peripheral; use nice_view on the central")
+    message(FATAL_ERROR "nice_view_custom is for the split peripheral; use nice_view on the central")
   endif()
 
   set(nice_view_upstream ${CMAKE_SOURCE_DIR}/boards/shields/nice_view)

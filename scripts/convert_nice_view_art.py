@@ -1,4 +1,4 @@
-"""Encode the approved Toyoterm artwork for the upstream nice!view widget.
+"""Encode custom artwork for the upstream nice!view widget.
 
 Requires Pillow. Run from any directory; outputs are relative to this repository.
 The upstream peripheral chooses balloon or mountain at boot. Both descriptors
@@ -12,17 +12,17 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets" / "nice_view"
-OUTPUT = ROOT / "boards" / "shields" / "nice_view_toyoterm" / "art.c"
+OUTPUT = ROOT / "boards" / "shields" / "nice_view_custom" / "art.c"
 
 
 def main():
-    with Image.open(ASSETS / "toyoterm-monochrome-master.png") as source:
+    with Image.open(ASSETS / "artwork-source.png") as source:
         portrait = ImageOps.grayscale(source).resize((68, 140), Image.Resampling.LANCZOS)
-    # No added dithering: the approved drawing already contains stippled shading.
+    # Preserve the source's shading pattern without adding dithering.
     portrait = portrait.point(lambda value: 255 if value >= 128 else 0, mode="1")
-    portrait.save(ASSETS / "toyoterm-68x140.png")
+    portrait.save(ASSETS / "artwork-68x140.png")
     portrait.resize((272, 560), Image.Resampling.NEAREST).save(
-        ASSETS / "toyoterm-preview.png"
+        ASSETS / "artwork-preview.png"
     )
 
     # The panel's native framebuffer is landscape, mounted counterclockwise.
@@ -45,8 +45,8 @@ def main():
             "    .header.reserved = 0,\n"
             "    .header.w = 140,\n"
             "    .header.h = 68,\n"
-            "    .data_size = sizeof(toyoterm_map),\n"
-            "    .data = toyoterm_map,\n"
+            "    .data_size = sizeof(custom_art_map),\n"
+            "    .data = custom_art_map,\n"
             "};\n"
         )
     OUTPUT.write_text(
@@ -54,7 +54,7 @@ def main():
         "#include <lvgl.h>\n\n"
         "/* Match the nice!view monochrome rendering polarity verified on device.\n"
         " * Swap the image palette only; keep the upstream status widget unchanged. */\n"
-        "static const LV_ATTRIBUTE_MEM_ALIGN uint8_t toyoterm_map[] = {\n"
+        "static const LV_ATTRIBUTE_MEM_ALIGN uint8_t custom_art_map[] = {\n"
         "#if CONFIG_NICE_VIEW_WIDGET_INVERTED\n"
         "    0x00, 0x00, 0x00, 0xff, /* index 0: black */\n"
         "    0xff, 0xff, 0xff, 0xff, /* index 1: white */\n"

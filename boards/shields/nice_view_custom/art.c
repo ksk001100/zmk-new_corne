@@ -3,7 +3,7 @@
 
 /* Match the nice!view monochrome rendering polarity verified on device.
  * Swap the image palette only; keep the upstream status widget unchanged. */
-static const LV_ATTRIBUTE_MEM_ALIGN uint8_t toyoterm_map[] = {
+static const LV_ATTRIBUTE_MEM_ALIGN uint8_t custom_art_map[] = {
 #if CONFIG_NICE_VIEW_WIDGET_INVERTED
     0x00, 0x00, 0x00, 0xff, /* index 0: black */
     0xff, 0xff, 0xff, 0xff, /* index 1: white */
@@ -87,8 +87,8 @@ const lv_img_dsc_t balloon = {
     .header.reserved = 0,
     .header.w = 140,
     .header.h = 68,
-    .data_size = sizeof(toyoterm_map),
-    .data = toyoterm_map,
+    .data_size = sizeof(custom_art_map),
+    .data = custom_art_map,
 };
 
 const lv_img_dsc_t mountain = {
@@ -97,6 +97,6 @@ const lv_img_dsc_t mountain = {
     .header.reserved = 0,
     .header.w = 140,
     .header.h = 68,
-    .data_size = sizeof(toyoterm_map),
-    .data = toyoterm_map,
+    .data_size = sizeof(custom_art_map),
+    .data = custom_art_map,
 };

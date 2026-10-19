@@ -31,6 +31,8 @@ python scripts/convert_nice_view_art.py
 時計回りに90度回転した140×68pxのLVGL 1-bit indexed画像を
 `boards/shields/nice_view_toyoterm/art.c` に出力します。
 パレット8バイトと、各行をバイト境界に揃えた1224バイトのビットマップを含みます。
+実機で確認された白黒の極性に合わせ、画像のパレットを入れ替えています。
+PNGプレビューは見せたい色のまま保持し、バッテリー・接続表示の色設定は変更しません。
 ファームウェアのビルド時にはPythonや原画は不要です。
 
 ## ビルド・書き込み

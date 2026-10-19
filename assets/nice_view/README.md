@@ -5,6 +5,11 @@
 標準 `peripheral_status.c`、`util.c`、`bolt.c` をそのまま使います。
 標準のランダムな画像選択先2つを同じ画像データに向けるため、起動時の絵は固定です。
 
+`nice_view_toyoterm.conf` は標準の `nice_view.conf` と同じく、表示を有効にして
+アイドル時の画面消去を無効にします。シールドの `.conf` は選択したシールド名で
+読み込まれるため、`SHIELD_NICE_VIEW` の選択だけではこれらの設定は引き継がれません。
+表示が無効な構成ではCMakeでエラーにし、画面のないUF2が生成されることを防ぎます。
+
 ## 画像
 
 - `toyoterm-monochrome-master.png`: 承認済みの編集原画（imagegenで作成）。

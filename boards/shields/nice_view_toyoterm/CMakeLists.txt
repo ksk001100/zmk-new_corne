@@ -1,5 +1,9 @@
 # SPDX-License-Identifier: MIT
 
+if(CONFIG_SHIELD_NICE_VIEW_TOYOTERM AND NOT CONFIG_ZMK_DISPLAY)
+  message(FATAL_ERROR "nice_view_toyoterm requires CONFIG_ZMK_DISPLAY=y; check nice_view_toyoterm.conf")
+endif()
+
 if(CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_STATUS)
   if(NOT CONFIG_ZMK_SPLIT OR CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
     message(FATAL_ERROR "nice_view_toyoterm is for the split peripheral; use nice_view on the central")

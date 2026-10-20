@@ -1,9 +1,23 @@
 # 右側 nice!view のカスタム画像
 
 右側は `nice_view_custom` シールド、左側は従来の `nice_view` を使用します。
-バッテリー・充電・左右間の接続状態の描画には、使用中のZMKブランチの
-標準 `peripheral_status.c`、`util.c`、`bolt.c` をそのまま使います。
+バッテリー・充電・左右間の接続状態の更新には、使用中のZMKブランチの
+標準 `peripheral_status.c`、`util.c`、`bolt.c` を使います。
+電池マークの描画だけは、下記の共通処理で％表示付きに差し替えます。
 標準のランダムな画像選択先2つを同じ画像データに向けるため、起動時の絵は固定です。
+
+## バッテリーの％表示（左右共通）
+
+左右とも、従来の電池マークを少し短くし、横に `0%`〜`100%` を表示します。
+8pxフォントを使い、接続・USBアイコンや右側の画像、左側のWPM・レイヤー表示の
+配置は維持します。数値は各側のバッテリー残量で、従来と同じ残量更新に連動します。
+充電中は引き続き電池マークに稲妻を重ねます。
+
+ルートの `CMakeLists.txt` が、nice!viewのステータス表示を使用するビルドだけに
+`src/nice_view_battery.c` を追加します。リンカーの `--wrap=draw_battery` により
+標準ウィジェットからの電池描画呼び出しだけを差し替えるため、ZMK本体の変更は不要です。
+フォントは `config/eyelash_corne.conf` の `CONFIG_LV_FONT_MONTSERRAT_8=y` で有効にします。
+この表示変更を両側に反映するには、左右それぞれのUF2をビルドして書き込みます。
 
 `nice_view_custom.conf` は標準の `nice_view.conf` と同じく、表示を有効にして
 アイドル時の画面消去を無効にします。シールドの `.conf` は選択したシールド名で
@@ -58,7 +72,8 @@ ZMK開発環境がある場合は通常のwestワークスペースから次の�
 west build -s zmk/app -b nice_nano_v2 -d build/right -- -DZMK_CONFIG=/absolute/path/to/this/repo/config -DZMK_EXTRA_MODULES=/absolute/path/to/this/repo -DSHIELD="eyelash_corne_right nice_view_custom"
 ```
 
-完成した右側用UF2を右側に書き込みます。左側用の設定・画像は変更していません。
+画像の差し替えだけなら、完成した右側用UF2を右側に書き込みます。
+％表示の追加は左右共通の変更なので、両側のUF2を書き込んでください。
 
 このシールドは現在のZMK v0.3系nice!view実装の画像シンボルと描画APIを使用します。
 ZMKを更新する際は、標準ウィジェットとの互換性と画像の向きを再確認してください。

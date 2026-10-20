@@ -9,5 +9,5 @@ if(CONFIG_SHIELD_NICE_VIEW AND CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_ST
   zephyr_library_sources(src/nice_view_battery.c)
   # Both upstream status widgets call draw_battery() from a separate source file.
   # Replace only that drawing function, retaining their normal event listeners.
-  zephyr_link_options(-Wl,--wrap=draw_battery)
+  zephyr_link_libraries(-Wl,--wrap=draw_battery)
 endif()

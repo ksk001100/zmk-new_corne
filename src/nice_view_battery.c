@@ -5,6 +5,18 @@
 
 LV_IMG_DECLARE(bolt);
 
+void __real_init_label_dsc(lv_draw_label_dsc_t *label, lv_color_t color, const lv_font_t *font,
+                          lv_text_align_t align);
+
+void __wrap_init_label_dsc(lv_draw_label_dsc_t *label, lv_color_t color, const lv_font_t *font,
+                          lv_text_align_t align) {
+    /* Only the connection/USB header uses right-aligned Montserrat 16. */
+    if (font == &lv_font_montserrat_16 && align == LV_TEXT_ALIGN_RIGHT) {
+        font = &lv_font_montserrat_12;
+    }
+    __real_init_label_dsc(label, color, font, align);
+}
+
 /* Linker wrapper shared by the central and peripheral nice!view widgets. */
 void __wrap_draw_battery(lv_obj_t *canvas, const struct status_state *state) {
     lv_draw_rect_dsc_t background;
@@ -29,10 +41,10 @@ void __wrap_draw_battery(lv_obj_t *canvas, const struct status_state *state) {
         lv_canvas_draw_img(canvas, 4, -1, &bolt, &image);
     }
 
-    /* Reserve x >= 51 for the existing connection/USB status symbol. */
+    /* The smaller connection/USB symbol leaves room for a larger percentage. */
     lv_draw_label_dsc_t label;
-    init_label_dsc(&label, LVGL_FOREGROUND, &lv_font_montserrat_8, LV_TEXT_ALIGN_LEFT);
+    init_label_dsc(&label, LVGL_FOREGROUND, &lv_font_montserrat_10, LV_TEXT_ALIGN_LEFT);
     char text[5];
     snprintf(text, sizeof(text), "%u%%", (unsigned int)battery);
-    lv_canvas_draw_text(canvas, 25, 4, 26, &label, text);
+    lv_canvas_draw_text(canvas, 25, 2, 30, &label, text);
 }

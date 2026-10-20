@@ -8,6 +8,7 @@ if(CONFIG_SHIELD_NICE_VIEW AND CONFIG_ZMK_DISPLAY AND CONFIG_NICE_VIEW_WIDGET_ST
   )
   zephyr_library_sources(src/nice_view_battery.c)
   # Both upstream status widgets call draw_battery() from a separate source file.
-  # Replace only that drawing function, retaining their normal event listeners.
-  zephyr_link_libraries(-Wl,--wrap=draw_battery)
+  # Replace the battery drawing and shrink the header's right-aligned symbols,
+  # retaining the upstream status widgets and their normal event listeners.
+  zephyr_link_libraries(-Wl,--wrap=draw_battery -Wl,--wrap=init_label_dsc)
 endif()

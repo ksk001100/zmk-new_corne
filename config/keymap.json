@@ -1,0 +1,966 @@
+{
+  "$schema": "https://abyss.keyboard-hub.com/schemas/keymap/v1.json",
+  "keyboard": "eyelash-corne",
+  "name": "Eyelash Corne ZMK import",
+  "description": "Imported from ZMK Studio",
+  "layers": [
+    {
+      "name": "QWERTY",
+      "bindings": [
+        {
+          "type": "key",
+          "usage": 43,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 20,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 26,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 8,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 21,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 23,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "up",
+          "speed": 1600
+        },
+        {
+          "type": "key",
+          "usage": 28,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 24,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 12,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 18,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 19,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 45,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 224,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 4,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 22,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 7,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 9,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 10,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "left",
+          "speed": 1600
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "right",
+          "speed": 1600
+        },
+        {
+          "type": "key",
+          "usage": 11,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 13,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 14,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 15,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 51,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 52,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 225,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 29,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 27,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 6,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 25,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 5,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "down",
+          "speed": 1600
+        },
+        {
+          "type": "key",
+          "usage": 17,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 16,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 54,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 55,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 56,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 46,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 227,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "mo",
+          "layer": 1
+        },
+        {
+          "type": "key",
+          "usage": 44,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 40,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "mo",
+          "layer": 2
+        },
+        {
+          "type": "key",
+          "usage": 42,
+          "usagePage": "keyboard"
+        }
+      ],
+      "modules": [
+        {
+          "name": "encoder_left",
+          "type": "rotary_encoder",
+          "clockwise": {
+            "type": "mouse_scroll",
+            "direction": "down",
+            "speed": 100
+          },
+          "counterClockwise": {
+            "type": "mouse_scroll",
+            "direction": "up",
+            "speed": 100
+          },
+          "firmwareDialect": {
+            "zmk": {
+              "cormoran_rsr": {
+                "sensorIndex": 0,
+                "clockwiseTapMs": 16,
+                "counterClockwiseTapMs": 16
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "NUMBER",
+      "bindings": [
+        {
+          "type": "key",
+          "usage": 41,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 30,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 31,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 32,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 33,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 34,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "up",
+          "speed": 1200
+        },
+        {
+          "type": "key",
+          "usage": 35,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 36,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 37,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 38,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 39,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 42,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "left",
+          "speed": 1200
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "right",
+          "speed": 1200
+        },
+        {
+          "type": "key",
+          "usage": 80,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 81,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 82,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 79,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "down",
+          "speed": 1200
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "key",
+          "usage": 41,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        }
+      ],
+      "modules": [
+        {
+          "name": "encoder_left",
+          "type": "rotary_encoder",
+          "clockwise": {
+            "type": "key",
+            "usage": 233,
+            "usagePage": "consumer"
+          },
+          "counterClockwise": {
+            "type": "key",
+            "usage": 234,
+            "usagePage": "consumer"
+          },
+          "firmwareDialect": {
+            "zmk": {
+              "cormoran_rsr": {
+                "sensorIndex": 0,
+                "clockwiseTapMs": 5,
+                "counterClockwiseTapMs": 5
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SYMBOL",
+      "bindings": [
+        {
+          "type": "key",
+          "usage": 41,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013214",
+          "label": "Key Press 34013214 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013215",
+          "label": "Key Press 34013215 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013216",
+          "label": "Key Press 34013216 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013217",
+          "label": "Key Press 34013217 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013218",
+          "label": "Key Press 34013218 NO"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "up",
+          "speed": 1200
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013219",
+          "label": "Key Press 34013219 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013220",
+          "label": "Key Press 34013220 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013221",
+          "label": "Key Press 34013221 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013222",
+          "label": "Key Press 34013222 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013223",
+          "label": "Key Press 34013223 NO"
+        },
+        {
+          "type": "key",
+          "usage": 42,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "left",
+          "speed": 1200
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "right",
+          "speed": 1200
+        },
+        {
+          "type": "key",
+          "usage": 45,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 46,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 47,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 48,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 49,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 53,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "output",
+          "action": "usb"
+        },
+        {
+          "type": "output",
+          "action": "bluetooth"
+        },
+        {
+          "type": "none"
+        },
+        {
+          "type": "none"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "down",
+          "speed": 1200
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013229",
+          "label": "Key Press 34013229 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013230",
+          "label": "Key Press 34013230 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013231",
+          "label": "Key Press 34013231 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013232",
+          "label": "Key Press 34013232 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013233",
+          "label": "Key Press 34013233 NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&kp 34013237",
+          "label": "Key Press 34013237 NO"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "raw",
+          "zmk": "&sk 1074200620",
+          "label": "Sticky Key 1074200620 NO"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        }
+      ],
+      "modules": [
+        {
+          "name": "encoder_left",
+          "type": "rotary_encoder",
+          "clockwise": {
+            "type": "key",
+            "usage": 233,
+            "usagePage": "consumer"
+          },
+          "counterClockwise": {
+            "type": "key",
+            "usage": 234,
+            "usagePage": "consumer"
+          },
+          "firmwareDialect": {
+            "zmk": {
+              "cormoran_rsr": {
+                "sensorIndex": 0,
+                "clockwiseTapMs": 5,
+                "counterClockwiseTapMs": 5
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fn",
+      "bindings": [
+        {
+          "type": "key",
+          "usage": 58,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 59,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 60,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 61,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 62,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 63,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "up",
+          "speed": 1200
+        },
+        {
+          "type": "key",
+          "usage": 64,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 65,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 66,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 67,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 69,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "key",
+          "usage": 69,
+          "usagePage": "keyboard"
+        },
+        {
+          "type": "raw",
+          "zmk": "&rgb_ug RGB_TOG",
+          "label": "Underglow RGB_TOG NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&rgb_ug RGB_EFF",
+          "label": "Underglow RGB_EFF NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&rgb_ug RGB_BRI",
+          "label": "Underglow RGB_BRI NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&rgb_ug RGB_BRD",
+          "label": "Underglow RGB_BRD NO"
+        },
+        {
+          "type": "raw",
+          "zmk": "&sk 17236048",
+          "label": "Sticky Key 17236048 NO"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "left",
+          "speed": 1200
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "right",
+          "speed": 1200
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "raw",
+          "zmk": "&sk 17236047",
+          "label": "Sticky Key 17236047 NO"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "output",
+          "action": "usb"
+        },
+        {
+          "type": "output",
+          "action": "bluetooth"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "mouse_move",
+          "direction": "down",
+          "speed": 1200
+        },
+        {
+          "type": "bluetooth",
+          "action": "select",
+          "profile": 0
+        },
+        {
+          "type": "bluetooth",
+          "action": "select",
+          "profile": 1
+        },
+        {
+          "type": "bluetooth",
+          "action": "select",
+          "profile": 2
+        },
+        {
+          "type": "bluetooth",
+          "action": "select",
+          "profile": 3
+        },
+        {
+          "type": "bluetooth",
+          "action": "select",
+          "profile": 4
+        },
+        {
+          "type": "bluetooth",
+          "action": "clear"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        },
+        {
+          "type": "trans"
+        }
+      ],
+      "modules": [
+        {
+          "name": "encoder_left",
+          "type": "rotary_encoder",
+          "clockwise": {
+            "type": "key",
+            "usage": 233,
+            "usagePage": "consumer"
+          },
+          "counterClockwise": {
+            "type": "key",
+            "usage": 234,
+            "usagePage": "consumer"
+          },
+          "firmwareDialect": {
+            "zmk": {
+              "cormoran_rsr": {
+                "sensorIndex": 0,
+                "clockwiseTapMs": 5,
+                "counterClockwiseTapMs": 5
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "name": "encoder_left",
+      "type": "rotary_encoder",
+      "firmwareDialect": {
+        "zmk": {
+          "cormoran_rsr": {
+            "sensorIndex": 0
+          }
+        }
+      }
+    }
+  ]
+}
